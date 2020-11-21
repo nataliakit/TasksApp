@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-theme.css">
+    <title>taskManager</title>
+</head>
+<body>
+<div class="section">
+    <header class="head">
+        <div class="container">
+            <div class="header">
+                <div class="burger" id="burger-menu" changeState="changeState(e)">
+                    <div class="burger__line"></div>
+                </div>
+                <img src="img/4092564-about-mobile-ui-profile-ui-user-website_114033.svg" alt="">
+                <button class="theme-button">O</button>
+            </div>
+            <div class="header__add">
+                <div class="header__sum">
+                    <h3>Today</h3>
+                    <p>10 tasks</p>
+                </div>
+                <form class="add-form">
+                    <div class="header__add-new-task">
+                        <a href="#"><img src="img/scratch.svg" alt="add"></a>
+                        <p>NEW TASK</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="calendar">
+        <div class="calendar__day">
+            <h3>01</h3>
+            <p>fri</p>
+        </div>
+        <div class="calendar__day">
+            <h3>02</h3>
+            <p>sat</p>
+        </div>
+        <div class="calendar__day">
+            <h3>03</h3>
+            <p>sun</p>
+        </div>
+        <div class="calendar__day">
+            <h3>04</h3>
+            <p>mon</p>
+        </div>
+    </div>
+    <div class="task-list">
+        <div class="container">
+            <div class="task-list__item"></div>
+        </div>
+    </div>
+    <form class="add-form">
+        <a href="" class="add-form__submit-button">
+            <img src="img/scratch.svg" alt="">
+        </a>
+    </form>
+    <div id="list" class="items"></div>
+    <div class="popup">
+        <div class="popup__window">
+            <form id="form" class="add-form">
+                <h2>new task</h2>
+                <textarea class="add-form__text-input" name="" id="" cols="30" rows="10" placeholder="Enter..."></textarea>
+                <div class="add-form__button">
+                    <a class="add-form__button-link" href="#">добавить</a>
+                </div>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
