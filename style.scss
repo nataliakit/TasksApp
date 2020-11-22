@@ -39,7 +39,9 @@ $block-size:32px;
           cursor: pointer;
 
           &__line {
-            height: 2px;
+            top: 15px;
+            height: 3px;
+            border-radius: 3px;
             width: 100%;
             background-color: $color_white;
             position: absolute;
@@ -49,7 +51,8 @@ $block-size:32px;
             &:before {
               content: "";
               display: block;
-              height: 2px;
+              height: 3px;
+              border-radius: 3px;
               width: $block-size;
               background-color: $color_white;
               position: absolute;
@@ -57,7 +60,7 @@ $block-size:32px;
             }
 
             &:before {
-              top: -16px;
+              top: 32px;
             }
 
             &:after {

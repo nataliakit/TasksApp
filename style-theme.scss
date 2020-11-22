@@ -2,11 +2,15 @@
 
 $color_white:#ffffff;
 $color_green:#009999;
+$color_green_light:#5CCCCC;
 $color_black:#000000;
 $color_grey:#798a86;
+$color_dark-grey:#777777;
+$color_twilight-gray:#444444;
 $color_white_smoke:#f4f4f4;
 $color_red:#FF0000;
 $block-size:32px;
+$toggle-size:22px;
 
 .section {
   font-family: "Roboto", sans-serif;
@@ -41,7 +45,9 @@ $block-size:32px;
           cursor: pointer;
 
           &__line {
-            height: 2px;
+            top: 15px;
+            height: 3px;
+            border-radius: 3px;
             width: 100%;
             background-color: $color_white;
             position: absolute;
@@ -51,7 +57,8 @@ $block-size:32px;
             &:before {
               content: "";
               display: block;
-              height: 2px;
+              height: 3px;
+              border-radius: 3px;
               width: $block-size;
               background-color: $color_white;
               position: absolute;
@@ -86,14 +93,78 @@ $block-size:32px;
             }
           }
         }
-        .header__login-img {
-          width: 24px;
+
+        &__logo {
+          width: 145px;
+        }
+
+        .button {
+          display: inline-block;
+          width: $toggle-size * 2;
+          height: $toggle-size;
+          position: relative;
+          color: $color_white;
+          background: $color_grey;
+          border-radius: ($toggle-size / 2) + (2px * 2);
+          //margin: 1em;
+          transition: transform .15ms ease-out, color .15s;
+
+          &[data-theme="dark"] {
+            color:$color_dark-grey;
+            & .button__change-theme::before {
+              background-color: $color_twilight-gray;
+              transform: translateX(100%);
+            }
+            & .button__change-theme::after {
+              background-color: $color_twilight-gray;
+              transform: translateX(100%);
+            }
+          }
+        }
+
+        .button__change-theme {
+          display: block;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border: 0;
+          background: transparent;
+          appearance: none;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: $toggle-size;
+            height: $toggle-size;
+            border-radius: $toggle-size;
+            background-color: $color_white;
+            z-index: 1;
+            transition: transform .15s ease-out, background-color .15s;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $toggle-size;
+            height: $toggle-size;
+            opacity: 0.5;
+            border-radius: $toggle-size;
+            transition: transform .15s ease-out, background-color .15s;
+          }
         }
       }
 
-      .header__add {
+      .head__add {
         display: flex;
         justify-content: space-between;
+        padding-top: 45px;
       }
 
       & h3 {
@@ -106,7 +177,7 @@ $block-size:32px;
         color: $color_white;
       }
 
-      .header__add-new-task {
+      .head__add-new-task {
         width: 150px;
         height: 40px;
         border: 1px solid $color_white;
@@ -173,7 +244,7 @@ $block-size:32px;
     .item {
       width: 90%;
       height: 40px;
-      background-color: #5CCCCC;
+      background-color: $color_green_light;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -192,7 +263,7 @@ $block-size:32px;
           z-index: -1;
           opacity: 0;
           left: 14px;
-          top: 13px;
+          top: -5px;
 
           &:checked {
             & + .checkbox {
@@ -220,7 +291,7 @@ $block-size:32px;
             width: 20px;
             height: 22px;
             border-radius: 7px;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 2px #000;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 2px $color_black;
             transition: 0.2s;
           }
         }
@@ -289,8 +360,32 @@ $block-size:32px;
 //темная тема
 
 .black-theme {
-  background-color: $color_red;
-  head {
-    background: $color_green;
+  background-color: $color_dark-grey;
+  .head {
+    background: $color_twilight-gray;
+  }
+  .add-form__submit-button {
+    background-color: $color_twilight-gray;
+  }
+
+  .items {
+    .item {
+      background-color: $color_twilight-gray;
+      & p {
+        color: $color_white;
+      }
+      .checkbox__text {
+        &:after {
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 2px $color_white;
+        }
+      }
+    }
+  }
+
+  .popup {
+    background-color: $color_twilight-gray;
+    .add-form__button-link {
+      color: $color_twilight-gray;
+    }
   }
 }

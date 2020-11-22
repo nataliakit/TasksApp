@@ -103,7 +103,9 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 .section .head .container .header .burger__line {
-  height: 2px;
+  top: 15px;
+  height: 3px;
+  border-radius: 3px;
   width: 100%;
   background-color: #ffffff;
   position: absolute;
@@ -112,14 +114,15 @@ h1, h2, h3, h4, h5, h6 {
 .section .head .container .header .burger__line:after, .section .head .container .header .burger__line:before {
   content: "";
   display: block;
-  height: 2px;
+  height: 3px;
+  border-radius: 3px;
   width: 32px;
   background-color: #ffffff;
   position: absolute;
   transition: 0.5s all ease-out;
 }
 .section .head .container .header .burger__line:before {
-  top: -16px;
+  top: 32px;
 }
 .section .head .container .header .burger__line:after {
   top: 16px;

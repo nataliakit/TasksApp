@@ -7,26 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style-theme.css">
-    <title>taskManager</title>
+    <title>taskApp</title>
 </head>
 <body>
 <div class="section">
     <header class="head">
         <div class="container">
             <div class="header">
-                <div class="burger" id="burger-menu" changeState="changeState(e)">
+                <div class="burger" id="burger-menu">
                     <div class="burger__line"></div>
                 </div>
-                <img src="img/4092564-about-mobile-ui-profile-ui-user-website_114033.svg" alt="">
-                <button class="theme-button">O</button>
+                <img class="header__logo" src="img/4092564-about-mobile-ui-profile-ui-user-website_114033.svg" alt="tasks">
+                <span class="button" data-theme="light">
+                    <button class="button__change-theme" id="toggle"></button>
+                </span>
             </div>
-            <div class="header__add">
-                <div class="header__sum">
+            <div class="head__add">
+                <div class="head__sum">
                     <h3>Today</h3>
                     <p>10 tasks</p>
                 </div>
                 <form class="add-form">
-                    <div class="header__add-new-task">
+                    <div class="head__add-new-task">
                         <a href="#"><img src="img/scratch.svg" alt="add"></a>
                         <p>NEW TASK</p>
                     </div>
