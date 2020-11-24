@@ -27,6 +27,8 @@ function toLocal() {
      list.innerHTML = localStorage.getItem('todo');
  }
 
+ localStorage.clear()
+
 const BURGER_MENU_ELEMENT = document.querySelector('#burger-menu');
 
 BURGER_MENU_ELEMENT.addEventListener('click', toggleBurgerMenu);
@@ -51,7 +53,7 @@ let section = document.querySelector('.section');
 let themeButton = document.querySelector('.button__change-theme');
 
 themeButton.onclick = function () {
-    section.classList.toggle('black-theme');
+    section.classList.toggle('dark-theme');
 
 }
 
@@ -59,7 +61,8 @@ const toggle = document.getElementById('toggle');
 
 const switchTheme = theme => (theme === "light") ? 'dark' : 'light';
 
-toggle.addEventListener('click',() =>{
+toggle.addEventListener('click',() => {
     const theme = toggle.parentNode.dataset.theme;
     toggle.parentNode.dataset.theme =switchTheme(theme);
-})
+});
+
